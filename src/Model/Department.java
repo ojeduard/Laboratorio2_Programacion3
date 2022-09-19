@@ -157,6 +157,7 @@ public class Department extends EmployeeManager {
 
         return true;
     }
+
     /*@Override
     public Boolean loadFromXML(String filename) {
 

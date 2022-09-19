@@ -1,6 +1,6 @@
                                                         LISTA
 
 1. Ajustar cargado de XML para clases tipo Department.
-2. Implementar modificacion de variables especificas para elementos de EmployeeManager/Department.
+2. Implementar (permitir) modificacion de variables especificas para elementos de EmployeeManager/Department.
 3. (Opcional) Segregar el guardado y cargado de archivos de las clases de informacion (Department, EmployeeManager, etc).
 4. Crear vista.
