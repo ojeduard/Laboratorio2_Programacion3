@@ -1,7 +1,17 @@
                                                         LISTA
 
-1. (Opcional) Mejorar algoritmos relacionados a archivos XML
-2. Implementar metodos de modificacion de variables especificas para elementos de EmployeeManager/Department.
-3. (Opcional) Segregar el guardado y cargado de archivos de las clases de informacion (Department, EmployeeManager, etc).
-4. Crear vista.
-5. POST-LAB: Preguntar por zonaje
+1. XML:
+    1.1 (Opcional) Mejorar algoritmos relacionados a archivos XML.
+    1.2 (Opcional) Agregar metodo para anadir elementos tipo Employee en XML (No necesario, pues usar el metodo createXML()
+    ante cualquier nueva adicion sirve, pero por terminos de eficiencia es claramente mejor hacer esto) (Por si nos da
+    tiempo).
+    1.3 (Opcional) Segregar el guardado y cargado de archivos de las clases de informacion (Department, EmployeeManager, etc).
+
+2. Funcionalidad General:
+    2.1 Implementar metodos de modificacion de variables especificas para elementos de EmployeeManager/Department.
+
+3. Vista:
+    3.1 Crear vista.
+
+4. POST-LAB:
+    4.1 Preguntar por zonaje.
