@@ -22,8 +22,6 @@ public class Department extends EmployeeManager {
     String address;
     Coordinates coordinates;
 
-    // 1. Preguntar sobre el porcentaje de zonaje.
-
     public Department(String deptName, String deptCode, String address, Coordinates coordinates) {
         super();
         this.deptName = deptName;
@@ -72,7 +70,6 @@ public class Department extends EmployeeManager {
         this.coordinates = coordinates;
     }
 
-    // METODOS DE TESTEO!!!!!
     @Override
     public Boolean createXML(String filename) {
         try {
@@ -158,7 +155,7 @@ public class Department extends EmployeeManager {
         return true;
     }
 
-    /*@Override
+    @Override
     public Boolean loadFromXML(String filename) {
 
         try {
@@ -167,7 +164,15 @@ public class Department extends EmployeeManager {
             Document document = builder.parse(filename);
 
             NodeList nodeList = document.getDocumentElement().getChildNodes();
-            for (int i = 0; i < nodeList.getLength(); i++) {
+
+            this.deptCode = document.getDocumentElement().getAttributes().item(0).getNodeValue();
+            this.deptName = nodeList.item(1).getChildNodes().item(0).getNodeValue();
+            this.address = nodeList.item(3).getChildNodes().item(0).getNodeValue();
+            double xCoordinate = Double.parseDouble(nodeList.item(5).getChildNodes().item(0).getNodeValue());
+            double yCoordinate = Double.parseDouble(nodeList.item(7).getChildNodes().item(0).getNodeValue());
+            coordinates = new Coordinates(xCoordinate,yCoordinate);
+
+            for (int i = 8; i < nodeList.getLength(); i++) {
 
                 Node node = nodeList.item(i);
 
@@ -199,5 +204,17 @@ public class Department extends EmployeeManager {
         }
 
         return true;
-    }*/
+    }
+
+    @Override
+    public String toString() {
+        String str;
+
+        str = deptName + ", " + deptCode + ", " + address + ", " + coordinates + "\n\n";
+
+        for(Employee employee : employeeList) {
+            str = str + employee.toString() + '\n';
+        }
+        return str;
+    }
 }

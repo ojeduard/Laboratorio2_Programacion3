@@ -50,7 +50,15 @@ public class EmployeeManager {
         return false;
     }
 
-    // METODOS DE TESTEO!!!
+    public Employee getEmployeeByID(String id) {
+        for(Employee employee : employeeList) {
+            if(employee.getId().equals(id)) {
+                return employee;
+            }
+        }
+        return null;
+    }
+
     public Boolean createXML(String filename) {
         try {
             DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();

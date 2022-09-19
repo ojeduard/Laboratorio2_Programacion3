@@ -1,6 +1,7 @@
                                                         LISTA
 
-1. Ajustar cargado de XML para clases tipo Department.
-2. Implementar (permitir) modificacion de variables especificas para elementos de EmployeeManager/Department.
+1. (Opcional) Mejorar algoritmos relacionados a archivos XML
+2. Implementar metodos de modificacion de variables especificas para elementos de EmployeeManager/Department.
 3. (Opcional) Segregar el guardado y cargado de archivos de las clases de informacion (Department, EmployeeManager, etc).
 4. Crear vista.
+5. POST-LAB: Preguntar por zonaje
