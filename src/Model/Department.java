@@ -2,6 +2,7 @@ package Model;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
@@ -175,7 +176,7 @@ public class Department extends EmployeeManager {
             for (int i = 8; i < nodeList.getLength(); i++) {
 
                 Node node = nodeList.item(i);
-
+                // Elements into the node
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element elem = (Element) node;
 
@@ -216,5 +217,22 @@ public class Department extends EmployeeManager {
             str = str + employee.toString() + '\n';
         }
         return str;
+    }
+
+    public static void main(String[] args) {
+        Employee employee1 = new Employee( "116500136", "Aaron", 85089546, 3000, "AFZ24");
+        Employee employee2 = new Employee( "116500146", "Alonso", 22615443, 2500, "SJO326");
+        Employee employee3 = new Employee( "416500136", "Cesar", 40586543, 1800, "USA413");
+
+//        EmployeeManager employeeList = new EmployeeManager();
+//        employeeList.add(employee1);
+//        employeeList.add(employee2);
+//        employeeList.add(employee3);
+
+        Department dep = new Department("HR", "AFZ224", "Heredia", new Coordinates(100, 250));
+
+        dep.loadFromXML("Ejemplo.xml");
+
+        System.out.println(dep.toString());
     }
 }

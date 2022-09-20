@@ -61,6 +61,7 @@ public class EmployeeManager {
 
     public Boolean createXML(String filename) {
         try {
+            // To create this one is necessary to import DocumentBuilder from javax.xml
             DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
             Document document = documentBuilder.newDocument();
@@ -121,6 +122,7 @@ public class EmployeeManager {
     public Boolean loadFromXML(String filename) {
 
         try {
+            // To create this one is necessary to import DocumentBuilder from javax.xml
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
 
@@ -169,4 +171,7 @@ public class EmployeeManager {
         }
         return str;
     }
+
 }
+
+
