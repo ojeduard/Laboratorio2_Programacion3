@@ -5,7 +5,7 @@ import View.*;
 
 public class Controller {
 
-    private EmployeeManager empMan = new Department();
+    private Department deptMan = new Department();
 
     public void startApp(){
         // Viewing and Controlling the application's GUI
@@ -14,6 +14,7 @@ public class Controller {
     }
 
     public String[] getEmpAsStringArray(String ID) {
-        return empMan.getEmpAsStringArray(ID);
+        deptMan.loadFromXML("xmlFI87.xml");
+        return deptMan.getEmpAsStringArray(ID);
     }
 }

@@ -175,7 +175,7 @@ public class EmployeeManager {
     }
 
     public String[] getEmpAsStringArray(String ID) {
-        if(validateID(ID)) {
+        if(!validateID(ID)) {
             Employee emp = getEmployeeByID(ID);
             return emp.getAsStringArray();
         }

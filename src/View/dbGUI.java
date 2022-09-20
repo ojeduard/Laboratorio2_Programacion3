@@ -7,6 +7,8 @@ import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class dbGUI extends JFrame{
     private JTabbedPane tabPane;
@@ -24,9 +26,14 @@ public class dbGUI extends JFrame{
     private  Controller controller = new Controller();
 
     public dbGUI(){
-
-        String[] columnNames = {"ID", "Name", "Phone", "Salary", "Department"};
-        table1.setModel(new DefaultTableModel(new String[][]{{},{}},columnNames));
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] columnNames = {"ID", "Name", "Phone", "Salary", "Dept. Code"};
+                String[][] data = new String[][]{controller.getEmpAsStringArray(nameField.getText())};
+                table1.setModel(new DefaultTableModel(data,columnNames));
+            }
+        });
 
         setContentPane(this.main);
         setSize(600, 300);
