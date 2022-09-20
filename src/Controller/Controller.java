@@ -17,4 +17,9 @@ public class Controller {
         empMan.loadFromXML("empDB.xml");
         return empMan.getEmpAsStringArray(ID);
     }
+
+    public void addingEmployees(String id, String name, String phone, String salary, String dptoCode){
+        empMan.add(new Employee(id, name, Integer.parseInt(phone), Double.parseDouble(salary), dptoCode));
+        empMan.createXML("Employees.xml");
+    }
 }

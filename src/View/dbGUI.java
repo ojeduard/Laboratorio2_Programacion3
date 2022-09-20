@@ -24,6 +24,7 @@ public class dbGUI extends JFrame{
     private JTable table1;
 
     private  Controller controller = new Controller();
+    EmployeeView employeeView = new EmployeeView();
 
     public dbGUI(){
         searchButton.addActionListener(new ActionListener() {
@@ -32,6 +33,13 @@ public class dbGUI extends JFrame{
                 String[] columnNames = {"ID", "Name", "Phone", "Salary", "Dept. Code"};
                 String[][] data = new String[][]{controller.getEmpAsStringArray(nameField.getText())};
                 table1.setModel(new DefaultTableModel(data,columnNames));
+            }
+        });
+
+        addEmployeeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                employeeView.setVisible(true);
             }
         });
 
