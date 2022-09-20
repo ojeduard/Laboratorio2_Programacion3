@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<departmentDB deptCode="AFZ224">
+    <deptName>HR</deptName>
+    <address>Heredia</address>
+    <xCoordinate>100.0</xCoordinate>
+    <yCoordinate>250.0</yCoordinate>
+    <employee id="116500136">
+        <name>Aaron</name>
+        <phone>85089546</phone>
+        <salary>3000.0</salary>
+        <deptCode>AFZ24</deptCode>
+    </employee><employee id="116500146">
+    <name>Alonso</name>
+    <phone>22615443</phone>
+    <salary>2500.0</salary>
+    <deptCode>SJO326</deptCode>
+    </employee>
+    <employee id="416500136">
+        <name>Cesar</name>
+        <phone>40586543</phone>
+        <salary>1800.0</salary>
+        <deptCode>USA413</deptCode>
+    </employee>
+</departmentDB>
