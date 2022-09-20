@@ -163,6 +163,25 @@ public class EmployeeManager {
         return true;
     }
 
+    public String[][] getAsStringMatrix() {
+        String[][] mat = new String[employeeList.size()][employeeList.size()];
+        for(int i = 0; i < employeeList.size(); i++) {
+            for(int j = 0; j < employeeList.size(); j++) {
+                String[] empArr = employeeList.get(i).getAsStringArray();
+                mat[i][j] = empArr[j];
+            }
+        }
+        return mat;
+    }
+
+    public String[] getEmpAsStringArray(String ID) {
+        if(validateID(ID)) {
+            Employee emp = getEmployeeByID(ID);
+            return emp.getAsStringArray();
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         String str = "";
@@ -171,7 +190,6 @@ public class EmployeeManager {
         }
         return str;
     }
-
 }
 
 

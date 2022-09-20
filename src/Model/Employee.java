@@ -28,6 +28,10 @@ public class Employee extends Person {
         this.deptCode = deptCode;
     }
 
+    public String[] getAsStringArray() {
+        return new String[]{ id,name,Integer.toString(phone),Double.toString(salary),deptCode };
+    }
+
     @Override
     public String toString() {
         return id + ", " + name + ", " + phone + ", " + salary + ", " + ", " + deptCode;

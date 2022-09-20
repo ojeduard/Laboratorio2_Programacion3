@@ -3,7 +3,10 @@ package View;
 import Controller.Controller;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
 
 public class dbGUI extends JFrame{
     private JTabbedPane tabPane;
@@ -21,22 +24,13 @@ public class dbGUI extends JFrame{
     private  Controller controller = new Controller();
 
     public dbGUI(){
+
+        String[] columnNames = {"ID", "Name", "Phone", "Salary", "Department"};
+        table1.setModel(new DefaultTableModel(new String[][]{{},{}},columnNames));
+
         setContentPane(this.main);
         setSize(600, 300);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
-
-//    private void createTable(){
-//        Object [] [] data = {
-//                {},
-//                {},
-//                {}};
-//        table1.setModel(new DefaultTableModel(
-//                data,
-//                new String [] {"ID", "Name", "Phone", "Salary", "Department"}
-//        ));
-//    }
-
 }
