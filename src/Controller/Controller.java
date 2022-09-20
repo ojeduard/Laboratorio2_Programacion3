@@ -14,7 +14,7 @@ public class Controller {
     }
 
     public String[] getEmpAsStringArray(String ID) {
-        empMan.loadFromXML("empDB.xml");
+        empMan.loadFromXML("Employees.xml");
         return empMan.getEmpAsStringArray(ID);
     }
 
