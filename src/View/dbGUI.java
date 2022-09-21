@@ -22,9 +22,11 @@ public class dbGUI extends JFrame{
     private JButton reportButton;
     private JButton addEmployeeButton;
     private JTable table1;
+    private JButton addDepartmentBtn;
 
     private  Controller controller = new Controller();
     EmployeeView employeeView = new EmployeeView();
+    DepartmentView departmentView = new DepartmentView();
 
     public dbGUI(){
         searchButton.addActionListener(new ActionListener() {
@@ -44,8 +46,14 @@ public class dbGUI extends JFrame{
         });
 
         setContentPane(this.main);
-        setSize(600, 300);
+        setSize(600, 400);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        addDepartmentBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                departmentView.setVisible(true);
+            }
+        });
     }
 }

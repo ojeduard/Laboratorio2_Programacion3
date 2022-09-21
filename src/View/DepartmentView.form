@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="View.DepartmentView">
-  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="addDepartmentView" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -179,7 +179,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="43447" class="javax.swing.JTextField" binding="textID">
+                          <component id="43447" class="javax.swing.JTextField" binding="textCode">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>
@@ -215,7 +215,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="f866e" class="javax.swing.JTextField" binding="textPhone">
+                          <component id="f866e" class="javax.swing.JTextField" binding="textAddress">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>
@@ -233,7 +233,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="8f3c5" class="javax.swing.JTextField" binding="textSalary">
+                          <component id="8f3c5" class="javax.swing.JTextField" binding="textLatitude">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>
@@ -251,7 +251,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="9f463" class="javax.swing.JTextField" binding="textCodeDep">
+                          <component id="9f463" class="javax.swing.JTextField" binding="textLongitude">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>

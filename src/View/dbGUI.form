@@ -218,7 +218,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="f406b" class="javax.swing.JButton">
+                          <component id="f406b" class="javax.swing.JButton" binding="addDepartmentBtn">
                             <constraints/>
                             <properties>
                               <text value="Add"/>

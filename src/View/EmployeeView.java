@@ -21,7 +21,7 @@ public class EmployeeView extends JFrame{
 
     EmployeeView(){
         setContentPane(this.addEmployeeView);
-        setSize(600, 300);
+        setSize(600, 400);
 
         saveButton.addActionListener(new ActionListener() {
             @Override
