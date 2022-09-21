@@ -19,6 +19,7 @@ public class Controller {
     }
 
     public void addingEmployees(String id, String name, String phone, String salary, String dptoCode){
+        empMan.loadFromXML("Employees.xml");
         empMan.add(new Employee(id, name, Integer.parseInt(phone), Double.parseDouble(salary), dptoCode));
         empMan.createXML("Employees.xml");
     }

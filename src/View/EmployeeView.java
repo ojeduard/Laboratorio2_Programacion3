@@ -27,6 +27,18 @@ public class EmployeeView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.addingEmployees(textID.getText(), textName.getText(), textPhone.getText(),textSalary.getText(), textCodeDep.getText());
+                JOptionPane.showMessageDialog(saveButton, "Successfully Added!");
+                dispose();
+                textID.setText(null);
+                textName.setText(null);
+                textPhone.setText(null);
+                textSalary.setText(null);
+                textCodeDep.setText(null);
+            }
+        });
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
