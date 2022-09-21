@@ -6,7 +6,7 @@ import View.*;
 public class Controller {
 
     private EmployeeManager empMan = new EmployeeManager();
-    private Department dep = new Department();
+    private DepartmentManager depts = new DepartmentManager();
 
     public void startApp(){
         // Viewing and Controlling the application's GUI
@@ -26,8 +26,8 @@ public class Controller {
     }
 
     public void addingDeparment(String code, String name, String address, String latitude, String longitude){
-        dep.loadFromXML("Employees.xml");
-       // dep.add(new Employee(code, name, address, new Coordinates(Double.parseDouble(latitude), Double.parseDouble(longitude))));// Aqui falta cambiar para agregar el departamento
-        dep.createXML("Employees.xml");
+        depts.loadFromXML("Department.xml");
+        depts.add(new Department(code, name, address, new Coordinates(Double.parseDouble(latitude), Double.parseDouble(longitude))));
+        depts.createXML("Department.xml");
     }
 }

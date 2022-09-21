@@ -25,7 +25,7 @@ public class DepartmentView extends JFrame{
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.addingEmployees(textCode.getText(), textName.getText(), textAddress.getText(),textLatitude.getText(), textLongitude.getText());
+                controller.addingDeparment(textCode.getText(), textName.getText(), textAddress.getText(),textLatitude.getText(), textLongitude.getText());
                 JOptionPane.showMessageDialog(saveButton, "Successfully Added!");
                 dispose();
                 textCode.setText(null);
