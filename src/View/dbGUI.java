@@ -46,6 +46,17 @@ public class dbGUI extends JFrame{
                 String[] columnNames = {"ID", "Name", "Phone", "Salary", "Dept. Code"};
                 String[][] data = new String[][]{controller.getEmpAsStringArray(nameField.getText())};
                 table1.setModel(new DefaultTableModel(data,columnNames));
+                table1.setRowSelectionAllowed(true);
+            }
+        });
+
+        searchDep.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] columnNames = {"Code", "Name", "Address", "Latitude", "Longitude"};
+                String[][] data = new String[][]{controller.getDepAsStringArray(textFleldDep.getText())};
+                tableDep.setModel(new DefaultTableModel(data,columnNames));
+                tableDep.setRowSelectionAllowed(true);
             }
         });
 
@@ -80,5 +91,25 @@ public class dbGUI extends JFrame{
                 departmentView.setVisible(true);
             }
         });
+
+        deleteDep.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int indexR = tableDep.getSelectedRow();
+                int indexC = tableDep.getSelectedColumn();
+
+                if(indexR == -1 || indexC == -1) {
+                    JOptionPane.showMessageDialog(main, "ERROR: No selected department");
+                }
+                else {
+                    String value = table1.getModel().getValueAt(tableDep.getSelectedRow(), tableDep.getSelectedColumn()).toString();
+                    controller.deletingDep(value);
+                    ((DefaultTableModel) tableDep.getModel()).setRowCount(0);
+                    JOptionPane.showMessageDialog(main, "Department deleted succesfully");
+                }
+            }
+        });
+
+
     }
 }
