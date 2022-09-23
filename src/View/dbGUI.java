@@ -102,7 +102,7 @@ public class dbGUI extends JFrame{
                     JOptionPane.showMessageDialog(main, "ERROR: No selected department");
                 }
                 else {
-                    String value = table1.getModel().getValueAt(tableDep.getSelectedRow(), tableDep.getSelectedColumn()).toString();
+                    String value = tableDep.getModel().getValueAt(tableDep.getSelectedRow(), tableDep.getSelectedColumn()).toString();
                     controller.deletingDep(value);
                     ((DefaultTableModel) tableDep.getModel()).setRowCount(0);
                     JOptionPane.showMessageDialog(main, "Department deleted succesfully");

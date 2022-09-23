@@ -18,21 +18,21 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 public class Department {
-    String deptName;
     String deptCode;
+    String deptName;
     String address;
     Coordinates coordinates;
 
     public Department(String deptCode, String deptName, String address, Coordinates coordinates) {
-        this.deptName = deptName;
         this.deptCode = deptCode;
+        this.deptName = deptName;
         this.address = address;
         this.coordinates = coordinates;
     }
 
     public Department(){
-        deptName = new String();
         deptCode = new String();
+        deptName = new String();
         address = new String();
         coordinates = new Coordinates(0, 0);
     }
@@ -76,21 +76,4 @@ public class Department {
     @Override
     public String toString() {return deptName + ", " + deptCode + ", " + address + ", " + coordinates;
     }
-
-//    public static void main(String[] args) {
-//        Employee employee1 = new Employee( "116500136", "Aaron", 85089546, 3000, "AFZ24");
-//        Employee employee2 = new Employee( "116500146", "Alonso", 22615443, 2500, "SJO326");
-//        Employee employee3 = new Employee( "416500136", "Cesar", 40586543, 1800, "USA413");
-//
-////        EmployeeManager employeeList = new EmployeeManager();
-////        employeeList.add(employee1);
-////        employeeList.add(employee2);
-////        employeeList.add(employee3);
-//
-//        Department dep = new Department("HR", "AFZ224", "Heredia", new Coordinates(100, 250));
-//
-//        dep.loadFromXML("Ejemplo.xml");
-//
-//        System.out.println(dep.toString());
-//    }
 }

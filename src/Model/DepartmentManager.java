@@ -42,7 +42,7 @@ public class DepartmentManager {
 
     public Boolean delete(String code) {
         for (Department department : departmentList) {
-            if (validateCode(code)) {
+            if (!validateCode(code)) {
                 if (department.getDeptCode().equals(code)) {
                     departmentList.remove(department);
                     return true;

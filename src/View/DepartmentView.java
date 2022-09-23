@@ -46,6 +46,5 @@ public class DepartmentView extends JFrame{
                 dispose();
             }
         });
-
     }
 }
