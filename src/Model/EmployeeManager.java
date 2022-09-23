@@ -13,6 +13,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class EmployeeManager {
@@ -51,8 +53,8 @@ public class EmployeeManager {
     }
 
     public Employee getEmployeeByID(String id) {
-        for(Employee employee : employeeList) {
-            if(employee.getId().equals(id)) {
+        for (Employee employee : employeeList) {
+            if (employee.getId().equals(id)) {
                 return employee;
             }
         }
@@ -65,6 +67,7 @@ public class EmployeeManager {
             DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
             Document document = documentBuilder.newDocument();
+            Files.deleteIfExists(Paths.get(filename));
 
             // creation of root element
             Element root = document.createElement("employeesDB");
@@ -114,6 +117,8 @@ public class EmployeeManager {
             return false;
         } catch (TransformerException tfe) {
             return false;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         return true;

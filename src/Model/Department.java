@@ -69,6 +69,12 @@ public class Department {
         this.coordinates = coordinates;
     }
 
+    public void modify(String deptName, String address, Coordinates coordinates) {
+        this.deptName = deptName;
+        this.address = address;
+        this.coordinates = coordinates;
+    }
+
     public String[] getAsStringArray() {
         return new String[]{ deptCode,deptName,address, String.valueOf(coordinates.getX()),String.valueOf(coordinates.getY())};
     }

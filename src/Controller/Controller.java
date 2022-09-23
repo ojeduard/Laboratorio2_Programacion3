@@ -65,4 +65,18 @@ public class Controller {
         }
         return false;
     }
+
+    public void modifyEmp(String id, String name, String phone, String salary, String deptCode) {
+        empMan = new EmployeeManager();
+        empMan.loadFromXML("Employees.xml");
+        empMan.getEmployeeByID(id).modify(name, Integer.parseInt(phone), Double.parseDouble(salary), deptCode);
+        empMan.createXML("Employees.xml");
+    }
+
+    public void modifyDept(String code, String name, String address, String latitude, String longitude) {
+        depts = new DepartmentManager();
+        depts.loadFromXML("Department.xml");
+        depts.getDepartmentbyCode(code).modify(name, address, new Coordinates(Double.parseDouble(latitude),Double.parseDouble(longitude)));
+        depts.createXML("Department.xml");
+    }
 }

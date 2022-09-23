@@ -28,6 +28,13 @@ public class Employee extends Person {
         this.deptCode = deptCode;
     }
 
+    public void modify(String name, int phone, double salary, String deptCode) {
+        this.name = name;
+        this.phone = phone;
+        this.salary = salary;
+        this.deptCode = deptCode;
+    }
+
     public String[] getAsStringArray() {
         return new String[]{ id,name,Integer.toString(phone),Double.toString(salary),deptCode };
     }

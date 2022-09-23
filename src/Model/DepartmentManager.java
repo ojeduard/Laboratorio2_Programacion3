@@ -13,6 +13,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class DepartmentManager {
@@ -66,6 +68,7 @@ public class DepartmentManager {
             DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
             Document document = documentBuilder.newDocument();
+            Files.deleteIfExists(Paths.get(filename));
 
             // creation of root element
             Element root = document.createElement("DEPARTMENT");
@@ -114,6 +117,8 @@ public class DepartmentManager {
             return false;
         } catch (TransformerException tfe) {
             return false;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         return true;

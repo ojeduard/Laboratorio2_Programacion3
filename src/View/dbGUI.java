@@ -79,7 +79,7 @@ public class dbGUI extends JFrame{
                     JOptionPane.showMessageDialog(main, "ERROR: No selected employee");
                 }
                 else {
-                    String value = table1.getModel().getValueAt(table1.getSelectedRow(), table1.getSelectedColumn()).toString();
+                    String value = table1.getModel().getValueAt(table1.getSelectedRow(), 0).toString();
                     controller.deletingEmployee(value);
                     ((DefaultTableModel) table1.getModel()).setRowCount(0);
                     JOptionPane.showMessageDialog(main, "Employee deleted succesfully");
@@ -104,7 +104,7 @@ public class dbGUI extends JFrame{
                     JOptionPane.showMessageDialog(main, "ERROR: No selected department");
                 }
                 else {
-                    String value = tableDep.getModel().getValueAt(tableDep.getSelectedRow(), tableDep.getSelectedColumn()).toString();
+                    String value = tableDep.getModel().getValueAt(tableDep.getSelectedRow(), 0).toString();
                     controller.deletingDep(value);
                     ((DefaultTableModel) tableDep.getModel()).setRowCount(0);
                     JOptionPane.showMessageDialog(main, "Department deleted succesfully");
