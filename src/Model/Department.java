@@ -31,7 +31,6 @@ public class Department {
     }
 
     public Department(){
-        super();
         deptName = new String();
         deptCode = new String();
         address = new String();
@@ -71,7 +70,7 @@ public class Department {
     }
 
     public String[] getAsStringArray() {
-        return new String[]{ deptCode,deptName,address, String.valueOf(coordinates)};
+        return new String[]{ deptCode,deptName,address, String.valueOf(coordinates.getX()),String.valueOf(coordinates.getY())};
     }
 
     @Override

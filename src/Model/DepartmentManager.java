@@ -97,7 +97,7 @@ public class DepartmentManager {
 
                 Element longitude = document.createElement("longitude");
                 longitude.appendChild(document.createTextNode(Double.toString(department.getCoordinates().getY())));
-                departmentXML.appendChild(latitude);
+                departmentXML.appendChild(longitude);
 
 
                 // create the xml file
@@ -126,7 +126,6 @@ public class DepartmentManager {
             // To create this one is necessary to import DocumentBuilder from javax.xml
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-
             Document document = builder.parse(filename);
 
             NodeList nodeList = document.getDocumentElement().getChildNodes();
@@ -150,7 +149,7 @@ public class DepartmentManager {
                     double longitude = Double.parseDouble(elem.getElementsByTagName("longitude")
                             .item(0).getChildNodes().item(0).getNodeValue());
 
-                    departmentList.add(new Department(code, name, address,new Coordinates(latitude, longitude)));
+                    departmentList.add(new Department(name, code, address,new Coordinates(latitude, longitude)));
                 }
             }
         } catch (ParserConfigurationException e) {
@@ -175,10 +174,10 @@ public class DepartmentManager {
         return mat;
     }
 
-    public String[] getEmpAsStringArray(String code) {
+    public String[] getDepAsStringArray(String code) {
         if(!validateCode(code)) {
-            Department emp = getDepartmentbyCode(code);
-            return emp.getAsStringArray();
+            Department dep = getDepartmentbyCode(code);
+            return dep.getAsStringArray();
         }
         return null;
     }

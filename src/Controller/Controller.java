@@ -45,4 +45,24 @@ public class Controller {
         }
         return false;
     }
+
+    public Boolean deletingEmployee(String code) {
+        depts = new DepartmentManager();
+        depts.loadFromXML("Department.xml");
+        if(depts.delete(code)) {
+            depts.createXML("Department.xml");
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean deletingDep(String id) {
+        empMan = new EmployeeManager();
+        empMan.loadFromXML("Employees.xml");
+        if(empMan.delete(id)) {
+            empMan.createXML("Employees.xml");
+            return true;
+        }
+        return false;
+    }
 }

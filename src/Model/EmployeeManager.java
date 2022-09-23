@@ -40,7 +40,7 @@ public class EmployeeManager {
 
     public Boolean delete(String id) {
         for (Employee employee : employeeList) {
-            if (validateID(id)) {
+            if (!this.validateID(id)) {
                 if (employee.getId().equals(id)) {
                     employeeList.remove(employee);
                     return true;
