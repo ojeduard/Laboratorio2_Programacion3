@@ -32,6 +32,8 @@ public class dbGUI extends JFrame{
     private  Controller controller = new Controller();
     EmployeeView employeeView = new EmployeeView();
     DepartmentView departmentView = new DepartmentView();
+    EmployeeView2 employeeView2 = new EmployeeView2();
+    DepartmentView2 departmentView2 = new DepartmentView2();
 
     public dbGUI(){
 
@@ -111,5 +113,49 @@ public class dbGUI extends JFrame{
         });
 
 
+        editEmp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int indexR = table1.getSelectedRow();
+                int indexC = table1.getSelectedColumn();
+
+                if(indexR == -1 || indexC == -1) {
+                    JOptionPane.showMessageDialog(main, "ERROR: No selected employee");
+                }
+                else {
+                    String value = table1.getModel().getValueAt(table1.getSelectedRow(), 0).toString();
+                    String[] empArray = controller.getEmpAsStringArray(value);
+                    employeeView2.jLabelEmp.setText(empArray[0]);
+                    employeeView2.textName.setText(empArray[1]);
+                    employeeView2.textPhone.setText(empArray[2]);
+                    employeeView2.textSalary.setText(empArray[3]);
+                    employeeView2.textCodeDep.setText(empArray[4]);
+                    employeeView2.setVisible(true);
+                }
+            }
+        });
+        editDep.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int indexR = tableDep.getSelectedRow();
+                int indexC = tableDep.getSelectedColumn();
+
+                if(indexR == -1 || indexC == -1) {
+                    JOptionPane.showMessageDialog(main, "ERROR: No selected department");
+                }
+                else {
+                    String value = tableDep.getModel().getValueAt(tableDep.getSelectedRow(), 0).toString();
+                    String[] depArray = controller.getDepAsStringArray(value);
+                    departmentView2.jlabelDep.setText(depArray[0]);
+                    departmentView2.textName.setText(depArray[1]);
+                    departmentView2.textAddress.setText(depArray[2]);
+                    departmentView2.textLatitude.setText(depArray[3]);
+                    departmentView2.textLongitude.setText(depArray[4]);
+                    departmentView2.setVisible(true);
+                }
+
+            }
+        });
     }
 }

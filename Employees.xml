@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<employeesDB>
-    <employee id="3">
-        <name>4</name>
-        <phone>5</phone>
-        <salary>6.0</salary>
-        <deptCode>7</deptCode>
-    </employee>
-</employeesDB>
