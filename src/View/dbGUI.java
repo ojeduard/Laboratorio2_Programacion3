@@ -4,6 +4,7 @@ import Controller.Controller;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,10 +25,13 @@ public class dbGUI extends JFrame{
     private JButton searchDep;
     private JButton reportDep;
     private JTextField textFleldDep;
-
     private JTable tableDep;
     private JButton editDep;
     private JButton editEmp;
+    private JLabel infoLabel;
+    private JLabel est1;
+    private JLabel est2;
+    private JLabel est3;
 
     private  Controller controller = new Controller();
     EmployeeView employeeView = new EmployeeView();
@@ -41,6 +45,11 @@ public class dbGUI extends JFrame{
         setSize(600, 400);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        infoLabel.setFont(new Font("Serif", Font.BOLD,40));
+        est1.setFont(new Font("Serif", Font.PLAIN, 30));
+        est2.setFont(new Font("Serif", Font.PLAIN, 30));
+        est3.setFont(new Font("Serif", Font.PLAIN, 30));
 
         searchButton.addActionListener(new ActionListener() {
             @Override

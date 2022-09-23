@@ -154,7 +154,7 @@ public class DepartmentManager {
                     double longitude = Double.parseDouble(elem.getElementsByTagName("longitude")
                             .item(0).getChildNodes().item(0).getNodeValue());
 
-                    departmentList.add(new Department(name, code, address,new Coordinates(latitude, longitude)));
+                    departmentList.add(new Department(code, name, address,new Coordinates(latitude, longitude)));
                 }
             }
         } catch (ParserConfigurationException e) {
