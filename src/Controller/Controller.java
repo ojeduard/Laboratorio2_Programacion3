@@ -5,8 +5,8 @@ import View.*;
 
 public class Controller {
 
-    private EmployeeManager empMan = new EmployeeManager();
-    private DepartmentManager depts = new DepartmentManager();
+    private EmployeeManager empMan;
+    private DepartmentManager depts;
 
     public void startApp(){
         // Viewing and Controlling the application's GUI
@@ -14,20 +14,35 @@ public class Controller {
         view.setVisible(true);
     }
 
+    public String[] getDepAsStringArray(String code) {
+        depts = new DepartmentManager();
+        depts.loadFromXML("Department.xml");
+        return depts.getDepAsStringArray(code);
+    }
+
     public String[] getEmpAsStringArray(String ID) {
+        empMan = new EmployeeManager();
         empMan.loadFromXML("Employees.xml");
         return empMan.getEmpAsStringArray(ID);
     }
 
-    public void addingEmployees(String id, String name, String phone, String salary, String dptoCode){
+    public Boolean addingEmployees(String id, String name, String phone, String salary, String dptoCode){
+        empMan = new EmployeeManager();
         empMan.loadFromXML("Employees.xml");
-        empMan.add(new Employee(id, name, Integer.parseInt(phone), Double.parseDouble(salary), dptoCode));
-        empMan.createXML("Employees.xml");
+        if(empMan.add(new Employee(id, name, Integer.parseInt(phone), Double.parseDouble(salary), dptoCode))){
+            empMan.createXML("Employees.xml");
+            return true;
+        }
+        return false;
     }
 
-    public void addingDeparment(String code, String name, String address, String latitude, String longitude){
+    public Boolean addingDeparment(String code, String name, String address, String latitude, String longitude){
+        depts = new DepartmentManager();
         depts.loadFromXML("Department.xml");
-        depts.add(new Department(code, name, address, new Coordinates(Double.parseDouble(latitude), Double.parseDouble(longitude))));
-        depts.createXML("Department.xml");
+        if(depts.add(new Department(code, name, address, new Coordinates(Double.parseDouble(latitude), Double.parseDouble(longitude))))){
+            depts.createXML("Department.xml");
+            return true;
+        }
+        return false;
     }
 }

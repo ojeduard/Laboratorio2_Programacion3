@@ -102,6 +102,12 @@
                           <text value="Add"/>
                         </properties>
                       </component>
+                      <component id="6ca01" class="javax.swing.JButton" binding="editEmp">
+                        <constraints/>
+                        <properties>
+                          <text value="Edit"/>
+                        </properties>
+                      </component>
                       <component id="6f16a" class="javax.swing.JButton" binding="deleteEmployeeButton">
                         <constraints/>
                         <properties>
@@ -178,17 +184,17 @@
                               <text value="Dep Code:"/>
                             </properties>
                           </component>
-                          <component id="c5b0b" class="javax.swing.JTextField">
+                          <component id="c5b0b" class="javax.swing.JTextField" binding="textFleldDep">
                             <constraints>
-                              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <preferredSize width="175" height="25"/>
                             </properties>
                           </component>
-                          <component id="7599" class="javax.swing.JButton" default-binding="true">
+                          <component id="7599" class="javax.swing.JButton" binding="searchDep">
                             <constraints>
-                              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <text value="Search"/>
@@ -224,13 +230,19 @@
                               <text value="Add"/>
                             </properties>
                           </component>
-                          <component id="7ee8e" class="javax.swing.JButton">
+                          <component id="48aaa" class="javax.swing.JButton" binding="editDep">
+                            <constraints/>
+                            <properties>
+                              <text value="Edit"/>
+                            </properties>
+                          </component>
+                          <component id="7ee8e" class="javax.swing.JButton" binding="deleteDep">
                             <constraints/>
                             <properties>
                               <text value="Delete"/>
                             </properties>
                           </component>
-                          <component id="3ccc4" class="javax.swing.JButton" default-binding="true">
+                          <component id="3ccc4" class="javax.swing.JButton" binding="reportDep">
                             <constraints/>
                             <properties>
                               <icon value="PDF_file_icon.png"/>
@@ -243,12 +255,12 @@
                   </grid>
                   <scrollpane id="816d">
                     <constraints>
-                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="1" use-parent-layout="false"/>
                     </constraints>
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="d0e52" class="javax.swing.JTable" default-binding="true">
+                      <component id="d0e52" class="javax.swing.JTable" binding="tableDep">
                         <constraints/>
                         <properties/>
                       </component>

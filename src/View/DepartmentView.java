@@ -25,8 +25,13 @@ public class DepartmentView extends JFrame{
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.addingDeparment(textCode.getText(), textName.getText(), textAddress.getText(),textLatitude.getText(), textLongitude.getText());
-                JOptionPane.showMessageDialog(saveButton, "Successfully Added!");
+
+                if(controller.addingDeparment(textCode.getText(), textName.getText(), textAddress.getText(),textLatitude.getText(), textLongitude.getText())){
+                    JOptionPane.showMessageDialog(saveButton, "Successfully Added!");
+                }else {
+                    JOptionPane.showMessageDialog(saveButton, "ERROR", "Adding Department", JOptionPane.WARNING_MESSAGE);
+                }
+
                 dispose();
                 textCode.setText(null);
                 textName.setText(null);

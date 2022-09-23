@@ -23,8 +23,7 @@ public class Department {
     String address;
     Coordinates coordinates;
 
-    public Department(String deptName, String deptCode, String address, Coordinates coordinates) {
-        super();
+    public Department(String deptCode, String deptName, String address, Coordinates coordinates) {
         this.deptName = deptName;
         this.deptCode = deptCode;
         this.address = address;
