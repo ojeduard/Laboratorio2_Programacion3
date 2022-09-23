@@ -46,7 +46,7 @@ public class Controller {
         return false;
     }
 
-    public Boolean deletingEmployee(String code) {
+    public Boolean deletingDep(String code) {
         depts = new DepartmentManager();
         depts.loadFromXML("Department.xml");
         if(depts.delete(code)) {
@@ -56,7 +56,7 @@ public class Controller {
         return false;
     }
 
-    public Boolean deletingDep(String id) {
+    public Boolean deletingEmployee(String id) {
         empMan = new EmployeeManager();
         empMan.loadFromXML("Employees.xml");
         if(empMan.delete(id)) {
